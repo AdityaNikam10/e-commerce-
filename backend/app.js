@@ -1,21 +1,36 @@
-const database = require('./db/Database');
+const express = require('express')
+const connectDatabase = require('./db/Database');
+const ErrorHandler = require('./utils/errorhandler');
+const cookieParser = require('cookie-parser');
+const app = express()
+// const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser')
 
 
 
+
+
+app.use(express.json());
+app.use(cookieParser());
+app.use("/",express.static("uploads"))
+app.use(bodyParser.urlencoded({extended:true,limit:'50mb'}))
 //config
+
 if(process.env.NODE_ENV !== "PRODUCTION"){
     require('dotenv').config({
         path:'backend/config/.env'
     })
-    
-}   
-const express = require('express');
+}
 
+//import router
 
-const app=express()
+const user = require('./controller/user')
 
+app.use("./api/v2/user",user)
 
+connectDatabase();
 
-database();
+app.use(ErrorHandler);
 
-module.exports=app;
+module.exports = app;
+
