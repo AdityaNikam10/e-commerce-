@@ -230,3 +230,59 @@ Key learnings -
 - We have create an Backend endpoint that will sent user data.
 - Also create frontend profile page that will display profile photo, name and email in one section. If there are no address display "No address found"y
 - In another section we have displayed address and added an button called "Add address".
+
+## Milestone 21: Project Overview -
+
+In this milestone we learned the following things -
+
+Key learnings - 
+
+- We have create address form in frontend page.
+- We have also create an state that will store input address
+- We have also impmented the logic where we click on add address in profile it should navigate to this form page.
+
+## Milestone 22: Project Overview -
+
+In this milestone we learned the following things -
+
+Key learnings - 
+
+- We have create an endpoint that will receive the address from address form in frontend.
+- We have also added the address to the address array inside user collection.
+
+## Milestone 23: Project Overview -
+
+In this milestone we learned the following things -
+
+Key learnings - 
+
+- We have create an placeorder button inside cart page and navigate to select address page when clicked.
+- We have also create and select address page that will display all the available address and have an option to select one address.
+- Created an backend endpoint that will send all the addresses of the user.
+
+## Milestone 24: Project Overview -
+
+In this milestone we learned the following things -
+
+Key learnings - 
+
+- We have created and displayed all the products we are ordering.
+- Then we have displayed the address user selected for delivery.
+- We have also displayed the total value of the cart.
+- We have also place an order button at the bottom.
+
+## Milestone 25: Project Overview -
+
+In this milestone we learned the following things -
+
+Key learnings - 
+
+- We have create an endpoint that will receive the products, user, address details.
+
+## Milestone 26: Project Overview -
+
+In this milestone we learned the following things -
+
+Key learnings - 
+
+- We have create an endpoint that will receive the user mail.
