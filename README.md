@@ -296,5 +296,18 @@ Key learnings -
 - We have added my-orders page in navbar for better navigation.
 
 ## Milestone 28: Project Overview -
+In this milestone we learned the following things -
+
+Key learnings -
+
+The use will be able to cancel the placed orders.
+
+## Milestone 29: Project Overview -
+In this milestone we learned the following things -
+
+Key learnings -
+
+Learn how to use PayPal API.
+Learn how to Integrate online payments.
 
 
