@@ -1,7 +1,4 @@
 
-# E--commerce-website
-
-****
 ## Milestone 1: Project Overview-
 
 In this milestone, we demonstrated the working of MERN Stack. And by using the MERN stack we are going to bulid an e-commerce website
@@ -300,12 +297,3 @@ Key learnings -
 - We have added my-orders page in navbar for better navigation.
 
 ## Milestone 28: Project Overview -
-
-In this milestone we learned the following things -
-
-Key learnings - 
-
-- We have added cancel order button.
-- If the order is already canceled this button is not displayed
-- We have created an endpoint that will receive the order-id
-- We have get the order using this id and mark the status canceled and save
