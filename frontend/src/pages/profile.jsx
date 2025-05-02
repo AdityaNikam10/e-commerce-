@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import AddressCart from "../components/auth/AddressCart";
-import NavBar from "../components/auth/nav";
-import { useNavigate } from "react-router-dom"
-
+import AddressCard from "../components/auth/AddressCard";
+import Nav from "../components/auth/nav";
+import { useNavigate } from "react-router-dom";
+import axios from "../axiosConfig";
 export default function Profile() {
 	const [personalDetails, setPersonalDetails] = useState({
 		name: "",
@@ -15,8 +15,8 @@ export default function Profile() {
 	const [addresses, setAddresses] = useState([]);
 
 	useEffect(() => {
-		fetch(
-			`http://localhost:8000/api/v2/user/profile?email=${"aditya@gmail.com"}`,
+		axios.get(
+			`http://localhost:8000/api/v2/user/profile?email=${"priya@gmail.com"}`,
 			{
 				method: "GET",
 				headers: {
@@ -39,13 +39,12 @@ export default function Profile() {
 	}, []);
 
 	const handleAddAddress = () => {
-        navigate("/create-address");
-    };
-
+		navigate("/create-address");
+	};
 
 	return (
 		<>
-			<NavBar />
+			<Nav />
 			<div className="w-full min-h-screen bg-neutral-800 p-5">
 				<div className="w-full h-full bg-neutral-700 rounded-lg">
 					<div className="w-full h-max my-2 p-5">
@@ -62,12 +61,10 @@ export default function Profile() {
 								<img
         src={personalDetails.avatarUrl ? `http://localhost:8000/${personalDetails.avatarUrl}` : `https://cdn.vectorstock.com/i/500p/17/61/male-avatar-profile-picture-vector-10211761.jpg`}
         alt="profile"
-        className="w-40 h-40 rounded-full"                   
+        className="w-40 h-40 rounded-full"
         onError={(e) => {
             e.target.onerror = null; // Prevents infinite loop if the default image also fails
             e.target.src = `https://cdn.vectorstock.com/i/500p/17/61/male-avatar-profile-picture-vector-10211761.jpg`;
-			console.log("Avatar URL:", personalDetails.avatarUrl);
-
         }}
     />
 							</div>
@@ -108,9 +105,9 @@ export default function Profile() {
 							</h1>
 						</div>
 						<div className="w-full h-max p-5">
-							<button className="w-max px-3 py-2 bg-neutral-600 text-neutral-100 rounded-md text-center hover:bg-neutral-100 hover:text-black transition-all duration-100"		
-							onClick={handleAddAddress}				
-								>
+							<button className="w-max px-3 py-2 bg-neutral-600 text-neutral-100 rounded-md text-center hover:bg-neutral-100 hover:text-black transition-all duration-100"
+							onClick={handleAddAddress} 
+							>
 								Add Address
 							</button>
 						</div>
@@ -121,7 +118,7 @@ export default function Profile() {
 								</div>
 							) : null}
 							{addresses.map((address, index) => (
-								<AddressCart key={index} {...address} />
+								<AddressCard key={index} {...address} />
 							))}
 						</div>
 					</div>
